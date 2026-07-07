@@ -1,0 +1,101 @@
+/* Import Premium Font */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
+
+/* Enforce Sleek Dark Theme Backgrounds */
+.stApp, [data-testid="stAppViewContainer"], section[data-testid="stMainBlockContainer"] {
+    background-color: #0B0F19 !important;
+    color: #F1F5F9 !important;
+}
+
+/* Hide/Darken top Streamlit toolbar white header */
+header[data-testid="stHeader"] {
+    background-color: #0B0F19 !important;
+    background: #0B0F19 !important;
+    border-bottom: 1px solid #131A26 !important;
+}
+
+/* Apply typography globally & ensure high contrast readability */
+html, body, [class*="css"], .stMarkdown, p, div, label, span {
+    font-family: 'Outfit', sans-serif !important;
+    color: #F1F5F9 !important;
+}
+
+/* High-contrast headings */
+h1, h2, h3, h4, h5, h6 {
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+}
+
+/* Modern Card Styling for Streamlit metrics */
+[data-testid="stMetricValue"] {
+    font-size: 2.2rem !important;
+    font-weight: 700 !important;
+    background: linear-gradient(135deg, #38BDF8, #818CF8) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+[data-testid="stMetricLabel"] {
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    color: #94A3B8 !important;
+}
+
+[data-testid="metric-container"] {
+    background: #131A26 !important;
+    border: 1px solid #1E293B !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4) !important;
+    border-radius: 12px !important;
+    padding: 18px 24px !important;
+    transition: transform 0.3s ease, border-color 0.3s ease !important;
+}
+
+[data-testid="metric-container"]:hover {
+    transform: translateY(-4px) !important;
+    border-color: #4F46E5 !important;
+}
+
+/* Styling buttons and download buttons for a modern touch */
+.stButton>button, .stDownloadButton>button {
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    transition: all 0.2s ease-in-out !important;
+    background: linear-gradient(135deg, #4F46E5, #3B82F6) !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    padding: 10px 20px !important;
+    width: 100% !important;
+}
+
+.stButton>button:hover, .stDownloadButton>button:hover {
+    background: linear-gradient(135deg, #6366F1, #60A5FA) !important;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4) !important;
+    transform: scale(1.02) !important;
+    color: #FFFFFF !important;
+}
+
+/* Glassmorphism sidebar elements */
+section[data-testid="stSidebar"] {
+    background-color: #070A13 !important;
+    border-right: 1px solid #131A26 !important;
+}
+
+/* Sidebar profile texts readability */
+section[data-testid="stSidebar"] p, section[data-testid="stSidebar"] div, section[data-testid="stSidebar"] h3 {
+    color: #E2E8F0 !important;
+}
+
+section[data-testid="stSidebar"] strong {
+    color: #38BDF8 !important;
+}
+
+/* Clean divider lines */
+hr {
+    border: 0 !important;
+    height: 1px !important;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.01)) !important;
+    margin: 2rem 0 !important;
+}
