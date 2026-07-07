@@ -14,8 +14,8 @@ header[data-testid="stHeader"] {
     border-bottom: 1px solid #131A26 !important;
 }
 
-/* Apply typography globally & ensure high contrast readability */
-html, body, [class*="css"], .stMarkdown, p, div, label, span {
+/* Apply typography safely & ensure high contrast readability */
+html, body, .stMarkdown, p, label, h1, h2, h3, h4, h5, h6, input, button {
     font-family: 'Outfit', sans-serif !important;
     color: #F1F5F9 !important;
 }
