@@ -78,14 +78,5 @@ def render_footer():
     """
     Renders a unified footer section across all multipage endpoints.
     """
-    st.markdown("---")
-    st.markdown(
-        """
-        <div style='text-align: center; color: #9CA3AF; font-size: 0.85em; padding-top: 15px;'>
-            <strong>HireReady</strong> | Placement Readiness Intelligence Dashboard<br>
-            <span style='font-size: 0.9em;'>Built using: Streamlit • Pandas • Plotly • Folium</span>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+    pass
 

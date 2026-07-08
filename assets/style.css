@@ -15,9 +15,15 @@ header[data-testid="stHeader"] {
 }
 
 /* Apply typography safely & ensure high contrast readability */
-html, body, .stMarkdown, p, label, h1, h2, h3, h4, h5, h6, input, button {
+html, body, .stMarkdown, p, label, h1, h2, h3, h4, h5, h6, button {
     font-family: 'Outfit', sans-serif !important;
     color: #F1F5F9 !important;
+}
+
+/* Ensure inputs, select dropdowns, and textareas have dark text on their light background */
+input, textarea, select {
+    font-family: 'Outfit', sans-serif !important;
+    color: #1E293B !important;
 }
 
 /* High-contrast headings */
@@ -28,12 +34,15 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Modern Card Styling for Streamlit metrics */
 [data-testid="stMetricValue"] {
-    font-size: 2.2rem !important;
+    font-size: 1.8rem !important;
     font-weight: 700 !important;
     background: linear-gradient(135deg, #38BDF8, #818CF8) !important;
     -webkit-background-clip: text !important;
     background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    line-height: 1.2 !important;
 }
 
 [data-testid="stMetricLabel"] {
@@ -59,7 +68,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Styling buttons and download buttons for a modern touch */
-.stButton>button, .stDownloadButton>button {
+.stButton>button, .stDownloadButton>button, div[data-testid="stFormSubmitButton"] button, [data-testid="stFileUploader"] button {
     border-radius: 8px !important;
     font-weight: 600 !important;
     transition: all 0.2s ease-in-out !important;
@@ -70,7 +79,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 100% !important;
 }
 
-.stButton>button:hover, .stDownloadButton>button:hover {
+.stButton>button:hover, .stDownloadButton>button:hover, div[data-testid="stFormSubmitButton"] button:hover, [data-testid="stFileUploader"] button:hover {
     background: linear-gradient(135deg, #6366F1, #60A5FA) !important;
     box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4) !important;
     transform: scale(1.02) !important;
@@ -116,4 +125,29 @@ div[data-baseweb="popover"] *, div[data-baseweb="menu"] *, [data-testid="stMainM
 /* Hover state for dropdown options */
 div[data-baseweb="popover"] li:hover, div[data-baseweb="menu"] li:hover, [data-testid="stMainMenuPopover"] li:hover, ul[data-testid="main-menu-list"] li:hover {
     background-color: #1E293B !important;
+}
+
+/* Style Tooltips and Table Action Icons for Visibility */
+div[role="tooltip"], div[data-testid="stTooltipContent"], .stTooltip, div[data-baseweb="tooltip"] {
+    background-color: #131A26 !important;
+    color: #F1F5F9 !important;
+    border: 1px solid #1E293B !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+    border-radius: 6px !important;
+}
+
+/* Force tooltip inner text to be white/legible */
+div[role="tooltip"] *, div[data-testid="stTooltipContent"] *, div[data-baseweb="tooltip"] * {
+    color: #F1F5F9 !important;
+}
+
+/* Table Toolbar Utility Icons (Fullscreen, Search, Download) visibility fix */
+button[title="View fullscreen"], 
+button[title="Download as CSV"], 
+[data-testid="StyledFullScreenButton"], 
+div[data-testid="stDataFrame"] button {
+    background-color: #131A26 !important;
+    border: 1px solid #1E293B !important;
+    color: #F1F5F9 !important;
+    border-radius: 4px !important;
 }
