@@ -185,7 +185,19 @@ else:
         sum2.metric("Topics Covered", f"{df_filtered['Topic'].nunique()}")
         f_min_date = df_filtered["Date"].min().strftime("%Y-%m-%d")
         f_max_date = df_filtered["Date"].max().strftime("%Y-%m-%d")
-        sum3.metric("Date Range", f"{f_min_date} to {f_max_date}")
+        
+        # Render a custom HTML card to allow long dates to wrap without truncation
+        sum3.markdown(
+            f"""
+            <div data-testid="metric-container" style="background: #131A26; border: 1px solid #1E293B; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); border-radius: 12px; padding: 18px 24px;">
+                <label data-testid="stMetricLabel" style="font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #94A3B8; display: block; margin-bottom: 8px;">Date Range</label>
+                <div style="font-size: 1.6rem; font-weight: 700; background: linear-gradient(135deg, #38BDF8, #818CF8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; white-space: normal; word-break: break-word; line-height: 1.2;">
+                    {f_min_date} to {f_max_date}
+                </div>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
         
         st.markdown("---")
         
